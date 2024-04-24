@@ -1,0 +1,94 @@
+[
+  {
+    "id": 1,
+    "name": "Standard Room",
+    "description": "Up to 200 Square Feet",
+    "price": 50,
+    "addons": [
+      {
+        "name": "Sanitizer",
+        "price": 25,
+        "description": "Helps remove allergens and dust mites, while deodorizing"
+      },
+      {
+        "name": "Pet Enzyme",
+        "price": 30,
+        "description": "Helps eliminate and sanitize pet related odours"
+      },
+      {
+        "name": "Stain Shield",
+        "price": 30,
+        "description": "Water based protectant that helps repel liquid spills before they seep into the carpet/upholstery fibers"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Standard Stair Set",
+    "description": "Between 9-13 Steps",
+    "price": 50,
+    "addons": [
+      {
+        "name": "Sanitizer",
+        "price": 25,
+        "description": "Helps remove allergens and dust mites, while deodorizing"
+      },
+      {
+        "name": "Pet Enzyme",
+        "price": 30,
+        "description": "Helps eliminate and sanitize pet related odours"
+      },
+      {
+        "name": "Stain Shield",
+        "price": 30,
+        "description": "Water based protectant that helps repel liquid spills before they seep into the carpet/upholstery fibers"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Standard Hallway",
+    "description": "Up to 100 Square Feet",
+    "price": 25,
+    "addons": [
+      {
+        "name": "Sanitizer",
+        "price": 25,
+        "description": "Helps remove allergens and dust mites, while deodorizing"
+      },
+      {
+        "name": "Pet Enzyme",
+        "price": 30,
+        "description": "Helps eliminate and sanitize pet related odours"
+      },
+      {
+        "name": "Stain Shield",
+        "price": 30,
+        "description": "Water based protectant that helps repel liquid spills before they seep into the carpet/upholstery fibers"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Large Room",
+    "description": "Up to 300 Square Feet",
+    "price": 75,
+    "addons": [
+      {
+        "name": "Sanitizer",
+        "price": 25,
+        "description": "Helps remove allergens and dust mites, while deodorizing"
+      },
+      {
+        "name": "Pet Enzyme",
+        "price": 30,
+        "description": "Helps eliminate and sanitize pet related odours"
+      },
+      {
+        "name": "Stain Shield",
+        "price": 35,
+        "description": "Water based protectant that helps repel liquid spills before they seep into the carpet/upholstery fibers"
+      }
+    ]
+  }
+]

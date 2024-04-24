@@ -1,0 +1,37 @@
+{
+  "rugs": {
+    "machine": {
+      "name": "Machine Made",
+      "price": 2.99
+    },
+    "handmade": {
+      "name": "Handmade",
+      "price": 3.49
+    },
+    "silk": {
+      "name": "Silk",
+      "price": 4.29
+    },
+    "wool": {
+      "name": "Cowhide/Sheepskin",
+      "price": 6
+    },
+
+    "idk": {
+      "name": "I Don’t Know",
+      "price": 2.99
+    }
+  },
+  "addons": {
+    "petEnzyme": {
+      "name": "Pet Enzyme Treatment",
+      "description": "Helps eliminate and sanitize pet related odours. Highly recommended for rugs with pet stains and deep odours.",
+      "price": 1.25
+    },
+    "protectRug": {
+      "name": "Protect Rug",
+      "description": "Protect Rug” should read “Stain repellent solution applied to help extend the life of the rug.",
+      "price": 1.35
+    }
+  }
+}
