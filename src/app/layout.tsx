@@ -6,6 +6,7 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import Steps from "@/components/steps";
 import SatisficationSection from "@/components/satisfication-section";
+import FloatingDock from "@/components/floating-dock";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Navbar />
+        <FloatingDock/>
         <Steps />
         {children}
         <SatisficationSection/>

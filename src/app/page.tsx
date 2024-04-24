@@ -3,7 +3,7 @@ import React from "react";
 import {Accordion} from "@/components/ui/accordion";
 import Carpet from "@/components/main-page/carpet";
 import Upholstery from "@/components/main-page/upholstery";
-import Rug from "@/components/main-page/rug";
+import Rug from "@/components/main-page/rug/rug";
 
 function Page() {
     return (

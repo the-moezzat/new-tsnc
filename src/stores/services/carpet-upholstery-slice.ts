@@ -1,5 +1,5 @@
 import {StateCreator} from 'zustand'
-import {CompoundType} from "@/stores/_compound-type";
+import {CompoundType} from "@/types/compound-type";
 
 type ServiceType = {
     name: string;

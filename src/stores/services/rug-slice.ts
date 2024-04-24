@@ -1,5 +1,6 @@
 import {StateCreator} from 'zustand'
-import {CompoundType} from "@/stores/_compound-type";
+import {CompoundType} from "@/types/compound-type";
+import addRug from "@/components/main-page/rug/add-rug";
 
 type Rug = {
     id: number;
@@ -34,10 +35,11 @@ export const createRugSlice: StateCreator<CompoundType, [], [], RugState> = (set
         return {rugs: newRugs};
     }),
 
-    editRug: (rugId, rug) => set((state) => {
+    editRug: (rugId, rugUpdated) => set((state) => {
+        console.log(rugUpdated);
         const newRugs = state.rugs.map(rug => {
             if (rug.id === rugId) {
-                return rug;
+                return rugUpdated;
             }
             return rug;
         });

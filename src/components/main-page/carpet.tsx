@@ -19,7 +19,6 @@ function Carpet() {
 
     const {addService, services: selectedServices} = useAppStore(state => state);
 
-    console.log(selectedServices);
     // create a function that take a row data object and create a new service
     const createService = (service: Service) => {
         return {
@@ -39,8 +38,6 @@ function Carpet() {
         const selectedService = selectedServices.find(s => s.name === service.name);
 
         if (!selectedService) {
-            console.log('selectedService', selectedService);
-            console.log(createService(service));
             addService(createService(service));
             return;
         }
@@ -82,7 +79,7 @@ function Carpet() {
                return (
                     <ServiceItem key={index} title={service.name} description={service.description}>
                         <Counter title={'How Many Rooms?'} onChange={(count) => handleServiceChange({count, service})}
-                                 value={0} maxValue={15}/>
+                                 value={0} maxValue={100}/>
 
                         <div className={'mt-2'}>
                             <h3 className={'text-lg font-semibold text-gray-800'}>AddOns</h3>

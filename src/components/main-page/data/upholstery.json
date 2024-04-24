@@ -1,0 +1,178 @@
+{
+  "sofa": {
+    "title": "Sofa, Sectionals, Arm Chairs",
+    "subcategories": [
+      {
+        "id": 1,
+        "name": "Standard Seat",
+        "description": "By seat we mean how many it can sit, not cushion\n                    necessarily. 1 cushion that seats 3 would be billed for 3 so\n                    please specify how many persons can sit. Arm chairs and sofa\n                    chairs are considered 1 seat",
+        "price": 50,
+        "addons": [
+          {
+            "name": "Sanitizer",
+            "price": 25,
+            "description": "Helps remove allergens and dust mites, while deodorizing"
+          },
+          {
+            "name": "Pet Enzyme",
+            "price": 30,
+            "description": "Helps eliminate and sanitize pet related odours"
+          },
+          {
+            "name": "Stain Shield",
+            "price": 35,
+            "description": "Water based protectant that helps repel liquid spills before they seep into the carpet/upholstery fibers"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Chaise",
+        "description": " A large seat known as chaise or chaise lounge that is long enough to prop up your legs",
+        "price": 100,
+        "addons": [
+          {
+            "name": "Sanitizer",
+            "price": 25,
+            "description": "Helps remove allergens and dust mites, while deodorizing"
+          },
+          {
+            "name": "Pet Enzyme",
+            "price": 30,
+            "description": "Helps eliminate and sanitize pet related odours"
+          },
+          {
+            "name": "Stain Shield",
+            "price": 35,
+            "description": "Water based protectant that helps repel liquid spills before they seep into the carpet/upholstery fibers"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Standard Ottoman",
+        "description": "",
+        "price": 50,
+        "addons": [
+          {
+            "name": "Sanitizer",
+            "price": 25,
+            "description": "Helps remove allergens and dust mites, while deodorizing"
+          },
+          {
+            "name": "Pet Enzyme",
+            "price": 30,
+            "description": "Helps eliminate and sanitize pet related odours"
+          },
+          {
+            "name": "Stain Shield",
+            "price": 35,
+            "description": "Water based protectant that helps repel liquid spills before they seep into the carpet/upholstery fibers"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Dining Chair",
+        "description": "Dining Seat, Bench Seat, or Office Chair",
+        "price": 30,
+        "addons": [
+          {
+            "name": "Sanitizer",
+            "price": 10,
+            "description": "Helps remove allergens and dust mites, while deodorizing"
+          },
+          {
+            "name": "Pet Enzyme",
+            "price": 15,
+            "description": "Helps eliminate and sanitize pet related odours"
+          },
+          {
+            "name": "Stain Shield",
+            "price": 20,
+            "description": "Water based protectant that helps repel liquid spills before they seep into the carpet/upholstery fibers"
+          }
+        ]
+      }
+    ]
+  },
+  "bed": {
+    "title": "Mattresses and Bed Frames",
+    "subcategories": [
+      {
+        "id": 5,
+        "name": "King Size",
+        "description": "",
+        "price": 150,
+        "addons": [
+          {
+            "name": "Sanitizer",
+            "price": 50,
+            "description": "Helps remove allergens and dust mites, while deodorizing"
+          },
+          {
+            "name": "Pet Enzyme",
+            "price": 65,
+            "description": "Helps eliminate and sanitize pet related odours"
+          },
+          {
+            "name": "Stain Shield",
+            "price": 75,
+            "description": "Water based protectant that helps repel liquid spills before they seep into the carpet/upholstery fibers"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Queen Size & Smaller",
+        "description": "",
+        "price": 100,
+        "addons": [
+          {
+            "name": "Sanitizer",
+            "price": 40,
+            "description": "Helps remove allergens and dust mites, while deodorizing"
+          },
+          {
+            "name": "Pet Enzyme",
+            "price": 45,
+            "description": "Helps eliminate and sanitize pet related odours"
+          },
+          {
+            "name": "Stain Shield",
+            "price": 50,
+            "description": "Water based protectant that helps repel liquid spills before they seep into the carpet/upholstery fibers"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Headboard Cleaning - King",
+        "description": "Steam cleaning of a king sized headboard",
+        "price": 100,
+        "addons": []
+      },
+      {
+        "id": 8,
+        "name": "Headboard Cleaning - Queen Size  & Smaller",
+        "description": "Steam cleaning of a headboard queen sized and under",
+        "price": 75,
+        "addons": []
+      },
+      {
+        "id": 9,
+        "name": "Bed Frame Cleaning - King",
+        "description": "Steam cleaning of a king sized headboard, siding, and footboard ",
+        "price": 150,
+        "addons": []
+      },
+      {
+        "id": 10,
+        "name": "Bed Frame Cleaning - Queen Size & Smaller",
+        "description": "Steam cleaning of headboard, siding, and footboard queen sized and under",
+        "price": 125,
+        "addons": []
+      }
+    ]
+  }
+}

@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 import Leading from "@/components/controller/leading";
-import {ControllerProps} from "@/components/controller/_controllerInterface";
+import {ControllerProps} from "@/types/controllerInterface";
 
 interface CounterProps extends Omit<ControllerProps, 'onChange'> {
     onChange: (value: number) => void;

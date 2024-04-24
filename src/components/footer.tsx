@@ -4,7 +4,7 @@ import React from "react";
 function Footer() {
   return (
     <footer
-      className={` footer w-full flex items-center justify-center p-8 gap-8 flex-col`}
+      className={` footer w-full flex items-center justify-center p-8 gap-8 flex-col mb-12`}
     >
       <Image src={"/logo-white.svg"} alt={"logo"} width={130} height={40} />
       <p className={"text-xs text-center text-white font-normal"}>
