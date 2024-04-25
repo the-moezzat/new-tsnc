@@ -26,7 +26,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
         replyTo: [body.email, 'info@torontosteamnclean.ca']
     };
 
-    transporter.sendMail(options);
+    await transporter.sendMail(options);
 
     console.log(body);
 
