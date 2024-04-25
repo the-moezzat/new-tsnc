@@ -1,5 +1,5 @@
 import type {Metadata} from "next";
-import {Lato} from "next/font/google";
+import {Inter, Lato} from "next/font/google";
 import "./globals.css";
 import React from "react";
 import Navbar from "@/components/navbar";
@@ -9,8 +9,7 @@ import SatisficationSection from "@/components/satisfication-section";
 import FloatingDock from "@/components/floating-dock/floating-dock";
 import Providers from "@/components/providers";
 
-// const inter = Inter({ subsets: ["latin"] });
-const lato = Lato({subsets: ['latin-ext'], weight: ["400", "700"]});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -24,7 +23,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-        <body className={lato.className}>
+        <body className={inter.className}>
         <Providers>
             <Navbar/>
             <FloatingDock/>

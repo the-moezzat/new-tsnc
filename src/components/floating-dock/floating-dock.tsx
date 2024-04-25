@@ -16,31 +16,62 @@ function FloatingDock() {
     } = useAppStore()
     const [isActiveLink, setIsActiveLink] = useState(false)
 
-    const nextStep: {
-        [key: string]: {
-            title: string,
-            link: string
-        }
-    } = {
-        '': {
-            title: 'Next (Scheduling)',
-            link:
-                '/appointment'
-        },
-        'appointment': {
-            title: 'Next (Contact)',
-            link: '/contact'
-        },
-        'contact': {
-            title: 'Next (Review)',
-            link: '/review'
-        },
-        'review': {
-            title: 'Next (Payment)',
-            link: ''
-        },
+    const [nextStep, setNextStep] = useState({
+      title: 'Next (Scheduling)',
+        link: '/appointment'
+    })
 
-    }
+
+    useEffect(() => {
+        if (pathname === '') {
+            setNextStep({
+                title: 'Next (Scheduling)',
+                link: '/appointment'
+            })
+            return
+        }
+        if (pathname === 'appointment') {
+           setNextStep({
+                title: 'Next (Contact)',
+                link: '/contact'
+              })
+                return
+        }
+
+        if (pathname === 'contact') {
+            setNextStep({
+                title: 'Next (Review)',
+                link: '/review'
+            })
+            return
+        }
+    }, []);
+
+    // const nextStep: {
+    //     [key: string]: {
+    //         title: string,
+    //         link: string
+    //     }
+    // } = {
+    //     '': {
+    //         title: 'Next (Scheduling)',
+    //         link:
+    //             '/appointment'
+    //     },
+    //     'appointment': {
+    //         title: 'Next (Contact)',
+    //         link: '/contact'
+    //     },
+    //     'contact': {
+    //         title: 'Next (Review)',
+    //         link: '/review'
+    //     },
+    //     'review': {
+    //         title: 'Next (Payment)',
+    //         link: ''
+    //     },
+    //
+    // }
 
 
     useEffect(() => {
@@ -94,8 +125,8 @@ function FloatingDock() {
                 <Link onClick={() => {
                     console.log('next')
                     setIsActiveLink(false)
-                }} href={nextStep[pathname].link} className={'flex gap-2 items-center'}>
-                    {nextStep[pathname].title}
+                }} href={nextStep.link} className={'flex gap-2 items-center'}>
+                    {nextStep.title}
                     <ChevronRight/>
                 </Link>
             </Button>}

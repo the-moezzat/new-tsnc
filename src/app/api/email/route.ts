@@ -1,8 +1,7 @@
 import nodemailer from 'nodemailer';
 import {NextRequest, NextResponse} from "next/server";
-// import {StripeWelcomeEmail} from "";
 import {render} from "@react-email/render";
-import ConfirmationEmail from '../../../../email/emails/confirmation';
+import ConfirmationEmail from './confirmation';
 
 const transporter = nodemailer.createTransport({
     host: 'mail.torontosteamnclean.ca',
