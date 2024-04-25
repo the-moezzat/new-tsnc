@@ -5,7 +5,6 @@ import SelectOption from "@/components/controller/select-option";
 import {Input} from "@/components/ui/input";
 import Toggle from "@/components/controller/toggle";
 import {RugType} from "@/types/rug-type";
-import {useAppStore} from "@/stores/app-store";
 
 const rugs = rugData;
 const rugsValues = Object.keys(rugs.rugs)
@@ -34,7 +33,15 @@ interface RugFormProps {
     rug?: RugType;
 }
 
-function formatData({name, price, width, length, unit, addOns, rug}: RugType) {
+function formatData({name, price, width, length, unit, addOns, rug}: {
+    name: string,
+    price: number,
+    width: number,
+    length: number,
+    unit: string,
+    addOns: { name: string, price: number }[]
+    rug?: RugType
+}): RugType {
     return {
         id: rug ? rug.id : new Date().getTime(),
         // @ts-ignore
@@ -60,21 +67,27 @@ function RugForm({onChange, rug}: RugFormProps) {
         if (!rugType || !width || !length || !unit) return;
 
         console.log(formatData({
+            // @ts-ignore
             name: rugs.rugs[rugType].name,
+            // @ts-ignore
             price: rugs.rugs[rugType].price,
             width,
             length,
             unit,
-            addOns
+            addOns,
+            rug
         }));
 
         onChange(formatData({
+            // @ts-ignore
             name: rugs.rugs[rugType].name,
+            // @ts-ignore
             price: rugs.rugs[rugType].price,
             width,
             length,
             unit,
-            addOns
+            addOns,
+            rug
         }));
     }, [rugType, width, length, unit, addOns, onChange])
 
