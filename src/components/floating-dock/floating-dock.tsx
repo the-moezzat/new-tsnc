@@ -45,7 +45,7 @@ function FloatingDock() {
             })
             return
         }
-    }, []);
+    }, [pathname]);
 
     // const nextStep: {
     //     [key: string]: {
