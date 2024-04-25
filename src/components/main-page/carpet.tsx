@@ -79,16 +79,23 @@ function Carpet() {
                return (
                     <ServiceItem key={index} title={service.name} description={service.description}>
                         <Counter title={'How Many Rooms?'} onChange={(count) => handleServiceChange({count, service})}
-                                 value={0} maxValue={100}/>
+                                 value={
+                                        selectedService ? selectedService.count : 0
+                                 } maxValue={100}/>
 
                         <div className={'mt-2'}>
                             <h3 className={'text-lg font-semibold text-gray-800'}>AddOns</h3>
                             <div className={'space-y-2'}>
-                                {service.addons.map((addOn, index) => (
-                                    <Counter key={index} title={addOn.name} description={addOn.description}
-                                             onChange={(count) => handleAddOnChange(count, addOn, service)} value={0}
-                                             maxValue={maxValue}/>
-                                ))}
+                                {service.addons.map((addOn, index) => {
+                                        const selectedAddon = selectedService ? selectedService.addon.find(a => a.name === addOn.name) : null;
+
+                                        const value = selectedAddon ? selectedAddon.count : 0;
+
+                                        return <Counter key={index} title={addOn.name} description={addOn.description}
+                                                        onChange={(count) => handleAddOnChange(count, addOn, service)}
+                                                        value={value}
+                                                        maxValue={maxValue}/>
+                                })}
                             </div>
                         </div>
                     </ServiceItem>

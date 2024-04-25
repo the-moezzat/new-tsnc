@@ -12,15 +12,19 @@ export interface CarpetUpholsteryState {
     services: ServiceType[];
 
     addService: (service: ServiceType) => void;
+
+    resetCarpetUpholstery: () => void;
 }
 
-export const createCarpetUpholsterySlice: StateCreator<CompoundType, [], [], CarpetUpholsteryState> = (set) => ({
+const initialState = {
+    services: [],
+}
+
+export const createCarpetUpholsterySlice: StateCreator<CompoundType, [], [], CarpetUpholsteryState> = (set, getState) => ({
     services: [],
     addService: (service) => set((state) => {
         // Check if the service is already in the array
         const existingServiceIndex = state.services.findIndex(s => s.name === service.name);
-
-        console.log('zus', existingServiceIndex);
 
         // If the service count is greater than 1, add or update it
         if (service.count >= 1) {
@@ -36,8 +40,13 @@ export const createCarpetUpholsterySlice: StateCreator<CompoundType, [], [], Car
             state.services.splice(existingServiceIndex, 1);
         } // handle the last case where the service isn't here
 
+        getState().calculateCarpetUpholsteryPrice();
 
         // Return the updated state
         return {services: state.services};
     }),
+
+    resetCarpetUpholstery: () => {
+        set(initialState)
+    }
 })

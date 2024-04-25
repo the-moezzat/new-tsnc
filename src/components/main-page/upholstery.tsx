@@ -66,7 +66,7 @@ function Upholstery() {
 
         if (!selectedAddOn) {
             // if the add-on doesn't exist in the selected service, add it
-            selectedService.addon.push({ ...addOn, count });
+            selectedService.addon.push({...addOn, count});
         } else {
             // if the add-on exists in the selected service, update its count
             selectedAddOn.count = count;
@@ -91,15 +91,21 @@ function Upholstery() {
 
                             return <ServiceItem key={subcategory.name} title={subcategory.name}
                                                 description={subcategory.description}>
-                                <Counter title={'How Many?'} onChange={(count) => handleServiceChange({count, service: subcategory})} value={0} maxValue={10}/>
+                                <Counter title={'How Many?'}
+                                         onChange={(count) => handleServiceChange({count, service: subcategory})}
+                                         value={selectedService ? selectedService.count : 0}
+                                         maxValue={10}/>
 
                                 {subcategory.addons?.length > 0 && <div className={'mt-2'}>
                                     <h3 className={'text-lg font-semibold text-gray-800'}>AddOns</h3>
                                     <div className={'space-y-2'}>
                                         {subcategory.addons.map(addon => {
+                                            const selectedAddon = selectedService ? selectedService.addon.find(a => a.name === addon.name) : null;
+
                                             return <Counter key={addon.name} title={addon.name}
                                                             onChange={(count) => handleAddOnChange(count, addon, subcategory)}
-                                                            value={0} maxValue={maxValue}
+                                                            value={selectedAddon ? selectedAddon.count : 0}
+                                                            maxValue={maxValue}
                                                             description={addon.description}/>
                                         })}
                                     </div>

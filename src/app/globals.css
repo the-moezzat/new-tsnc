@@ -72,6 +72,7 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'lato', sans-serif;
   }
 }
 

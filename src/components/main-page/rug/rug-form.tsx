@@ -1,10 +1,11 @@
-import React, {useCallback, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import rugData from "@/components/main-page/data/rugData.json";
 import {calculateSizeInSquareFeet} from "@/util/unit-converter";
 import SelectOption from "@/components/controller/select-option";
 import {Input} from "@/components/ui/input";
 import Toggle from "@/components/controller/toggle";
 import {RugType} from "@/types/rug-type";
+import {useAppStore} from "@/stores/app-store";
 
 const rugs = rugData;
 const rugsValues = Object.keys(rugs.rugs)
@@ -33,6 +34,21 @@ interface RugFormProps {
     rug?: RugType;
 }
 
+function formatData({name, price, width, length, unit, addOns, rug}: RugType) {
+    return {
+        id: rug ? rug.id : new Date().getTime(),
+        // @ts-ignore
+        name,
+        // @ts-ignore
+        price,
+        width,
+        length,
+        unit,
+        sizeInFt: calculateSizeInSquareFeet(length, width, unit).toFixed(2),
+        addOns
+    }
+}
+
 function RugForm({onChange, rug}: RugFormProps) {
     const [rugType, setRugType] = React.useState((rugsOptions.find(option => option.name === rug?.name)?.value || ''))
     const [width, setWidth] = React.useState(rug ? rug.width : 0)
@@ -40,29 +56,27 @@ function RugForm({onChange, rug}: RugFormProps) {
     const [unit, setUnit] = React.useState(rug ? rug.unit : 'ft')
     const [addOns, setAddOns] = React.useState<{ name: string, price: number }[]>(rug ? rug.addOns : [])
 
-    const sanitizeRugType = useCallback(() => {
-            return {
-                id: rug ? rug.id : Date.now(),
-                // @ts-ignore
-                name: rugs.rugs[rugType].name,
-                // @ts-ignore
-                price: rugs.rugs[rugType].price,
-                width,
-                length,
-                unit,
-                sizeInFt: calculateSizeInSquareFeet(length, width, unit).toFixed(2),
-                addOns
-            }
-        }
-        , [addOns, length, rugType, unit, width]);
-
     useEffect(function () {
         if (!rugType || !width || !length || !unit) return;
 
-        console.log(sanitizeRugType());
+        console.log(formatData({
+            name: rugs.rugs[rugType].name,
+            price: rugs.rugs[rugType].price,
+            width,
+            length,
+            unit,
+            addOns
+        }));
 
-        onChange(sanitizeRugType());
-    }, [rugType, width, length, unit, addOns, onChange, sanitizeRugType])
+        onChange(formatData({
+            name: rugs.rugs[rugType].name,
+            price: rugs.rugs[rugType].price,
+            width,
+            length,
+            unit,
+            addOns
+        }));
+    }, [rugType, width, length, unit, addOns, onChange])
 
     return (
         <>

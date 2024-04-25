@@ -1,6 +1,5 @@
 import {StateCreator} from 'zustand'
 import {CompoundType} from "@/types/compound-type";
-import addRug from "@/components/main-page/rug/add-rug";
 
 type Rug = {
     id: number;
@@ -21,30 +20,47 @@ export interface RugState {
     removeRug: (rugId: number) => void;
 
     editRug: (rugId: number, rug: Rug) => void;
+
+    resetRug: () => void;
 }
 
-export const createRugSlice: StateCreator<CompoundType, [], [], RugState> = (set) => ({
+const initialState = {
+    rugs: [],
+}
+
+export const createRugSlice: StateCreator<CompoundType, [], [], RugState> = (set, get) => ({
     rugs: [],
     addRug: (rug) => set((state) => {
         state.rugs.push(rug);
+
+        get().calculateRugPrice()
+
         return {rugs: state.rugs};
     }),
 
     removeRug: (rugId) => set((state) => {
         const newRugs = state.rugs.filter(rug => rug.id !== rugId);
+
+        state.rugs = newRugs;
+        get().calculateRugPrice()
         return {rugs: newRugs};
     }),
 
     editRug: (rugId, rugUpdated) => set((state) => {
-        console.log(rugUpdated);
         const newRugs = state.rugs.map(rug => {
-            if (rug.id === rugId) {
+            if (rug.id === rugUpdated.id) {
                 return rugUpdated;
             }
             return rug;
         });
+
+        state.rugs = newRugs;
+        get().calculateRugPrice()
+
         return {rugs: newRugs};
     }),
 
-
+    resetRug: () => {
+        set(initialState)
+    }
 })
